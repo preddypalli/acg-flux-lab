@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: turtle-deployment
+  namespace: default
 spec:
   replicas: 3
   selector:
@@ -11,8 +12,6 @@ spec:
     metadata:
       labels:
         app: nginx
-        namespace: default
-
     spec:
       containers:
       - name: nginx
